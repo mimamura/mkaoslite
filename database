@@ -1,0 +1,18 @@
+Tables in database sos_design
+
+// table name: network
+// store SoS edges and nodes
+
+id_network bigint(20)	PK auto_increment	
+hash	char(32)	id for SoS			
+edges	text		edges properties		
+nodes	text		nodes properties
+
+// table name: network_cmd
+// store stack of remote commands sent do SoS
+
+id_cmd	bigint(20)	PK auto_increment	
+cmd	varchar(255)	Txt with formatted cmd		
+status	varchar(255)	queued/done/error
+timestamp		timestamp to order queue	CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP	
+
